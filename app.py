@@ -13,12 +13,9 @@ migrate = Migrate(app, db)
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(120), nullable=False)
-    marketing_opt_in = db.Column(db.Boolean, default=False)
 
     comments = db.relationship('Comment', backref='user', lazy=True)
     likes = db.relationship('Like', backref='user', lazy=True)
-
 
 class Place(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,10 +42,6 @@ class Like(db.Model):
 @app.route('/')
 def index():
     return render_template('index.html')
-
-@app.route('/news')
-def news():
-    return render_template('news.html')
 
 @app.route('/about')
 def about():
@@ -79,24 +72,16 @@ def data():
 @app.route('/uploadContact', methods=['POST'])
 def upload_contact():
     name = request.form.get('name')
-    password = request.form.get('password')
-    marketing = 'marketing_opt_in' in request.form  # Checkbox returns True if checked
 
-    # Basic validation
-    if not name or not password:
-        return "Name and password are required!", 400
+    phone = request.form.get('phone')
 
-    # Length validation (backup to JS)
-    if len(name) > 25 or len(password) > 25:
-        return "Username or password too long!", 400
+    email = request.form.get('email')
 
-    # Save to database
-    new_user = User(username=name, password=password, marketing_opt_in=marketing)
-    db.session.add(new_user)
-    db.session.commit()
+    marketing = request.form.get('marketing_opt_in')
 
-    return render_template("success.html", name=name)
+    print(name, phone, email, marketing)
 
+    return f"Received: {name}, {phone}, {email}, Opt-in: {marketing}"
 
 
 if __name__ == '__main__':
