@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+
+<div class="container mt-4">
+  <h1>News Page</h1>
+  <div class="row">
+
+    <!-- News 1 -->
+    <div class="col-12 col-md-4 mb-4 text-center">
+      <img
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/09/possessors-by-heart-machine-key-art.jpg?q=49&amp;fit=crop&amp;w=360&amp;h=240&amp;dpr=2"
+        alt="Possessors by Heart Machine key art"
+        class="img-fluid rounded">
+      <h3 class="mt-3">
+        <a href="https://gamerant.com/possessors-release-date-new-hyper-light-drifter-dev-game-ps5-pc/"
+           target="_blank">
+          Hyper Light Drifter Dev's Next Game Gets a Release Date
+        </a>
+      </h3>
+    </div>
+
+    <!-- News 2 -->
+    <div class="col-12 col-md-4 mb-4 text-center">
+      <img
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/09/drag-x-drive-update-local-wireless-play.jpg?q=49&amp;fit=crop&amp;w=360&amp;h=240&amp;dpr=2"
+        alt="drag-x-drive-update-local-wireless-play"
+        class="img-fluid rounded">
+      <h3 class="mt-3">
+        <a href="https://gamerant.com/drag-x-drive-update-local-wireless-play/"
+           target="_blank">
+          Switch 2 Exclusive Update Adds Feature That Should Have Been There at Launch
+        </a>
+      </h3>
+    </div>
+
+    <!-- News 3 -->
+    <div class="col-12 col-md-4 mb-4 text-center">
+      <img
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/09/battlefield-6-keyart.jpg?q=49&amp;fit=crop&amp;w=360&amp;h=240&amp;dpr=2"
+        alt="Battlefield 6 Pre-Load Date and Time"
+        class="img-fluid rounded">
+      <h3 class="mt-3">
+        <a href="https://gamerant.com/battlefield-6-pre-load-date-time/"
+           target="_blank">
+          Battlefield 6 Pre-Load Date and Time Revealed
+        </a>
+      </h3>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
