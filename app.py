@@ -43,6 +43,10 @@ class Like(db.Model):
 def index():
     return render_template('index.html')
 
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -73,15 +77,13 @@ def data():
 def upload_contact():
     name = request.form.get('name')
 
-    phone = request.form.get('phone')
-
-    email = request.form.get('email')
+    password = request.form.get('password')
 
     marketing = request.form.get('marketing_opt_in')
 
-    print(name, phone, email, marketing)
+    print(name, password, marketing)
 
-    return f"Received: {name}, {phone}, {email}, Opt-in: {marketing}"
+    return f"Received: {name}, {password}, Opt-in: {marketing}"
 
 
 if __name__ == '__main__':

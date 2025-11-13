@@ -3,46 +3,25 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 
 <form id="contactForm" action="/uploadContact" method="POST">
-<div class="mb-3">
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Username</label>
+    <input type="text" class="form-control" id="inputName" name="name">
+  </div>
 
-        <label for="inputName" class="form-label">Name</label>
+  <div class="mb-3">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword" name="password" aria-describedby="passwordHelp">
+    <div id="passwordHelp" class="form-text">We'll never share your password with anyone else.</div>
+  </div>
 
-        <input type="text" class="form-control" id="inputName" name="name">
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="inputMarketing" name="marketing_opt_in">
+    <label class="form-check-label" for="inputMarketing">I am happy to be contacted by third parties</label>
+  </div>
 
-    </div>
-
-    <div class="mb-3">
-
-        <label for="inputPhone" class="form-label">Phone number</label>
-
-        <input type="tel" class="form-control" id="inputPhone" name="phone">
-
-        <div id="phoneHelp" class="form-text">Include country code if applicable.</div>
-
-    </div>
-
-
-    <div class="mb-3">
-
-        <label for="inputEmail" class="form-label">Email address</label>
-
-
-        <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp">
-
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-
-    </div>
-
-    <div class="mb-3 form-check">
-
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="marketing_opt_in">
-
-        <label class="form-check-label" for="exampleCheck1">I am happy to be contacted by third parties</label>
-
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 <!-- Link your JavaScript file -->
 <script src="{{ url_for('static', filename='scripts/site.js') }}"></script>
 
