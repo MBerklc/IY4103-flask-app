@@ -1,9 +1,12 @@
 from app import app, db, User, Place, Comment, Like
 
 with app.app_context():
-
-    User.query.filter(Comment.id > 0).delete()
-
+    # 1) Tablo içindeki tüm kayıtları sil
+    Comment.query.delete()
+    Like.query.delete()
+    User.query.delete()
+    Place.query.delete()
     db.session.commit()
 
-print("Sample data added!")
+
+print("All records deleted and ID counters reset!")
