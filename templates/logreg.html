@@ -2,15 +2,34 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 
-<form id="contactForm" action="/uploadContact" method="POST">
+<h1>Login</h1>
+<form id="contactForm_login" action="/login" method="POST">
   <div class="mb-3">
     <label for="inputName" class="form-label">Username</label>
-    <input type="text" class="form-control" id="inputName" name="name">
+    <input type="text" class="form-control" id="inputName_login" name="name" value="test">
   </div>
 
   <div class="mb-3">
     <label for="inputPassword" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword" name="password" aria-describedby="passwordHelp">
+    <input type="password" class="form-control" id="inputPassword_login" name="password" aria-describedby="passwordHelp" value="testpassword">
+    <div id="passwordLogin" class="form-text">We'll never share your password with anyone else.</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+
+
+<h1>Register</h1>
+<form id="contactForm" action="/uploadContact" method="POST">
+  <div class="mb-3">
+    <label for="inputName" class="form-label">Username</label>
+    <input type="text" class="form-control" id="inputName" name="name" value="test">
+  </div>
+
+  <div class="mb-3">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword" name="password" aria-describedby="passwordHelp" value="testpassword">
     <div id="passwordHelp" class="form-text">We'll never share your password with anyone else.</div>
   </div>
 
@@ -19,7 +38,7 @@
     <label class="form-check-label" for="inputMarketing">I am happy to be contacted by third parties</label>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Register</button>
 </form>
 
 <!-- Link your JavaScript file -->

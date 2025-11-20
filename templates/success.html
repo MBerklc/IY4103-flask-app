@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
 <div class="container mt-4 text-center">
   <h2>Thank you, {{ name }}!</h2>
   <p>Your registration has been saved successfully.</p>
