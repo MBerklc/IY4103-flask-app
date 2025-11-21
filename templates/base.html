@@ -12,37 +12,35 @@
 
 <h2>Game News</h2>
 
-<!-- ✅ LOGIN / LOGOUT BUTTON -->
-<div style="float: right; margin: 10px;">
+<!-- 🔵 TOP RIGHT AREA (Login + Navigation) -->
+<div style="position: absolute; top: 10px; right: 10px; text-align: right;">
 
+    <!-- Login / Logout Button -->
     {% if 'user_id' in session %}
-        <!-- User is logged in -->
-        <span>Welcome, {{ session.username }}!</span>
+        <span>Welcome, {{ session.username }}!</span><br>
         <button type="button" onclick="window.location.href='/logout'" class="btn btn-danger btn-sm">
             Logout
         </button>
     {% else %}
-        <!-- User is NOT logged in -->
         <button type="button" onclick="window.location.href='/logreg'" class="btn btn-primary btn-sm">
             Login / Register
         </button>
     {% endif %}
+
+    <!-- 🔵 Navigation under the button -->
+    <ul style="list-style: none; padding: 0; margin-top: 10px;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/faq">Faq</a></li>
+    </ul>
 
 </div>
 
 <script src="/static/scripts/site.js"></script>
 
 {% block content %}
-<!-- Child templates insert content here -->
 {% endblock %}
-
-<!-- Navigation links -->
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/news">News</a></li>
-  <li><a href="/about">About</a></li>
-  <li><a href="/faq">Faq</a></li>
-</ul>
 
 </body>
 </html>
